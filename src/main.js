@@ -1,8 +1,18 @@
 import Vue from 'vue';
 import App from './App';
+import VueRouter from 'vue-router';
+import goods from './components/goods/goods';
 
-/* eslint-disable no-new */
-new Vue({
-  el: 'body',
-  components: { App }
+Vue.use(VueRouter);
+
+let app = Vue.extend(App);
+
+let router = new VueRouter();
+
+router.map({
+  '/goods': {
+    component: goods
+  }
 });
+
+router.start(app, '#app');

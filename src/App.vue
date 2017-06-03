@@ -1,7 +1,18 @@
 <template>
   <div id="app">
-      我是app
-  <v-header></v-header>
+    <v-header></v-header>
+    <div class="tab">
+      <div class="tab-item">
+        <a v-link="{path:'/goods'}">商品</a>
+      </div>
+      <div class="tab-item">
+        <a v-link="{path:'/ratings'}">评论</a>
+      </div>
+      <div class="tab-item">
+        <a v-link="{path:'/seller'}">商家</a>
+      </div>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -14,6 +25,14 @@ export default {
 };
 </script>
 
-<style>
-
+<style lang="scss">
+#app{
+  .tab{
+    display: flex;
+    .tab-item{
+      flex-grow: 1;
+      text-align:center;
+    }
+  }
+}
 </style>
