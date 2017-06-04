@@ -1,11 +1,13 @@
 import Vue from 'vue';
 import App from './App';
 import VueRouter from 'vue-router';
+import VueResource from 'vue-resource';
 import goods from 'components/goods/goods';
 import ratings from 'components/ratings/ratings';
 import sellers from 'components/sellers/sellers';
 
 Vue.use(VueRouter);
+Vue.use(VueResource);
 
 let app = Vue.extend(App);
 
