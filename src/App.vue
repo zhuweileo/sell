@@ -28,11 +28,11 @@ export default {
     this.$http.get('/api/seller').then((res) => {
       const OK = 0;
       // console.log(res);
-      console.log(res.body);
+      // console.log(res.body);
       let err = res.body.errno;
       if (err === OK) {
         this.seller = res.body.data;
-        console.log(this.seller);
+        // console.log(this.seller);
       }
     });
   },
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../common/scss/mixin.scss";
+@import "../common/scss/index.scss";
 .tab {
   display: flex;
   width: 100%;
