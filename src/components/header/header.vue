@@ -110,7 +110,8 @@
             }
           }
           .description{
-            font-size:12px;
+            line-height:12px;
+            font-size:10px;//手机可以显示10px
           }
         }
       }
