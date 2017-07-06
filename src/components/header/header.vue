@@ -38,8 +38,9 @@ export default {
     background: #000;
     .content-wrapper {
         font-size: 0;
+        padding: 24px 16px 18px 24px;
         .avatar {
-            padding: 24px 16px 18px 24px;
+            margin-right: 16px;
             display: inline-block;
             img {
                 width: 64px;
@@ -48,22 +49,32 @@ export default {
         }
         .content {
             display: inline-block;
+            vertical-align: top;
             .title {
-                font-size: 16px;
+                font-size: 0px;
+                margin-top: 2px;
                 .brand {
                     @include bg-img('brand');
                     width: 30px;
                     height: 18px;
-                    display:inline-block;
+                    display: inline-block;
                     background-size: 30px 18px;
                     vertical-align: top;
+                    margin-right: 6px;
+                }
+                .name{
+                    font-size: 16px;
+                    font-weight: bold;
+                    line-height: 18px;
                 }
             }
             .distribution {
                 font-size: 12px;
+                margin-top:8px;
             }
             .activity {
                 font-size: 12px;
+                margin-top:10px;
             }
         }
     }
