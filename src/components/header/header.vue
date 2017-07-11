@@ -12,11 +12,18 @@
         <div class="distribution">
           {{seller.description}}/{{seller.deliveryTime}}分钟送达
         </div>
-        <div class="activity" v-if="seller.supports">
+        <div class="supports" v-if="seller.supports">
           <span class="icon" :class="iconMap[seller.supports[0].type]"></span>
           <span class="description">{{seller.supports[0].description}}</span>
         </div>
+        <div class="supports-count" v-if="seller.supports">
+          <span class="count">{{seller.supports.length}}个</span>
+          <i class="icon-keyboard_arrow_right"></i>
+        </div>
       </div>
+    </div>
+    <div class="bulletin-wrapper">
+      <span class="bulletin-title"></span><span class="bulletin-text">{{seller.bulletin}}</span><i class="icon-keyboard_arrow_right"></i>
     </div>
   </div>
 </template>
@@ -48,20 +55,21 @@
     .content-wrapper {
       font-size: 0;
       padding: 24px 16px 18px 24px;
+      position: relative;
       .avatar {
         margin-right: 16px;
         display: inline-block;
         img {
           width: 64px;
           height: 64px; // vertical-align: top;
-          border-radius:2px;
+          border-radius: 2px;
         }
       }
       .content {
         display: inline-block;
         vertical-align: top;
         .title {
-          font-size: 0px;
+          font-size: 0;
           margin-top: 2px;
           .brand {
             @include bg-img('brand');
@@ -82,13 +90,14 @@
           font-size: 12px;
           margin-top: 8px;
         }
-        .activity {
-          font-size: 0;
+        .supports {
+          font-size: 10px;
+          color: white;
           margin-top: 10px;
           .icon {
             display: inline-block;
-            margin-right:4px;
-            vertical-align:top;
+            margin-right: 4px;
+            vertical-align: middle;
             width: 12px;
             height: 12px;
             background-size: 12px 12px;
@@ -109,12 +118,64 @@
               @include bg-img('special_1');
             }
           }
-          .description{
-            line-height:12px;
-            font-size:10px;//手机可以显示10px
+          .description {
+            line-height: 12px;
+            vertical-align: baseline;
+            font-size: 10px; //手机可以显示10px
+          }
+        }
+        .supports-count {
+          position: absolute;
+          right: 12px;
+          bottom: 12px;
+          background: rgba(255, 255, 255, .2);
+          border-radius: 12px;
+          padding:0 8px;
+          .count {
+            margin-right:2px;
+            line-height: 24px;
+            height: 24px;
+            font-size: 10px;
+            color: white;
+            /*vertical-align: middle;*/
+          }
+          .icon-keyboard_arrow_right{
+            line-height:24px;
+            font-size: 10px;
+            /*color: white;*/
+            vertical-align: -1px;
           }
         }
       }
+    }
+    .bulletin-wrapper{
+      height:28px;
+      line-height:28px;
+      padding:0 22px 0 12px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      position:relative;
+      .bulletin-title{
+        margin-right:4px;
+        display:inline-block;
+        width:22px;
+        height:12px;
+        background-size: 22px 12px;
+        background-repeat: no-repeat;
+        @include bg-img("bulletin");
+      }
+      .bulletin-text{
+        font-size:10px;
+        vertical-align:top;
+      }
+      .icon-keyboard_arrow_right{
+        position: absolute;
+        right:12px;
+        line-height:28px;
+        font-size: 10px;
+      }
+
     }
   }
 </style>
