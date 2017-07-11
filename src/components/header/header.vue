@@ -25,6 +25,9 @@
     <div class="bulletin-wrapper">
       <span class="bulletin-title"></span><span class="bulletin-text">{{seller.bulletin}}</span><i class="icon-keyboard_arrow_right"></i>
     </div>
+    <div class="background">
+      <img :src="seller.avatar" alt="">
+    </div>
   </div>
 </template>
 
@@ -51,7 +54,8 @@
 
   .header {
     color: #fff;
-    background: #000;
+    position:relative;
+    background: rgba(7,17,27,.5);
     .content-wrapper {
       font-size: 0;
       padding: 24px 16px 18px 24px;
@@ -92,7 +96,6 @@
         }
         .supports {
           font-size: 10px;
-          color: white;
           margin-top: 10px;
           .icon {
             display: inline-block;
@@ -136,7 +139,6 @@
             line-height: 24px;
             height: 24px;
             font-size: 10px;
-            color: white;
             /*vertical-align: middle;*/
           }
           .icon-keyboard_arrow_right{
@@ -152,6 +154,7 @@
       height:28px;
       line-height:28px;
       padding:0 22px 0 12px;
+      background: rgba(7,17,27,.2);
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
@@ -176,6 +179,17 @@
         font-size: 10px;
       }
 
+    }
+    .background{
+      img{
+        position:absolute;
+        top:0;
+        left:0;
+        z-index:-1;
+        width:100%;
+        height:100%;
+        filter:blur(10px);
+      }
     }
   }
 </style>
