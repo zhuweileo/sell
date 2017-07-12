@@ -56,6 +56,7 @@
     color: #fff;
     position:relative;
     background: rgba(7,17,27,.5);
+    overflow:hidden;
     .content-wrapper {
       font-size: 0;
       padding: 24px 16px 18px 24px;
