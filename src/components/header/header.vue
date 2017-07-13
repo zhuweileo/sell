@@ -16,7 +16,7 @@
           <span class="icon" :class="iconMap[seller.supports[0].type]"></span>
           <span class="description">{{seller.supports[0].description}}</span>
         </div>
-        <div class="supports-count" v-if="seller.supports">
+        <div class="supports-count" v-if="seller.supports" @click="showDe">
           <span class="count">{{seller.supports.length}}个</span>
           <i class="icon-keyboard_arrow_right"></i>
         </div>
@@ -27,6 +27,39 @@
     </div>
     <div class="background">
       <img :src="seller.avatar" alt="">
+    </div>
+    <div class="detial" v-show="showDetail">
+      <div class="content">
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+      </div>
+      <div class="footer"><span class="icon-close"></span></div>
     </div>
   </div>
 </template>
@@ -40,8 +73,14 @@
     },
     data() {
       return {
+        showDetail: false,
         iconMap: ['decrease', 'discount', 'special', 'invoice', 'guarantee']
       };
+    },
+    methods: {
+        showDe() {
+            this.showDetail = !this.showDetail;
+        }
     },
     created() {
 //        this.iconMap = ['descrease', 'discount', 'special', 'invoice', 'guarantee'];
@@ -190,6 +229,32 @@
         width:100%;
         height:100%;
         filter:blur(10px);
+      }
+    }
+    .detial{
+      overflow:auto;
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100vh;
+      background: rgba(7,17,27,.8);
+      z-index:1;
+      /*filter:blur(10px);*/
+      display:flex;
+      flex-direction:column;
+      /*overflow:auto;*/
+      .content{
+        flex-grow:1;
+      }
+      .footer{
+        text-align:center;
+        padding-top:32px;
+        padding-bottom:32px;
+        .icon-close{
+          color:rgba(255,255,255,.5);
+          font-size:32px;
+        }
       }
     }
   }
