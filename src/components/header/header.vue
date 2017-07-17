@@ -30,34 +30,12 @@
     </div>
     <div class="detial" v-show="showDetail">
       <div class="content">
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
-        <p>adfjakdfdadkjfkadjfkadsjfkajdfladjfladjfladjflajdlfjaldjfladjflajdfadjfla</p>
+        <h1 class="name">{{seller.name}}</h1>
+        <div class="star"></div>
+        <div class="favor"></div>
+        <div class="notice">
+          <p class="bulletin">{{seller.bulletin}}</p>
+        </div>
       </div>
       <div class="footer"><span class="icon-close"></span></div>
     </div>
