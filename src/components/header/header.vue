@@ -23,7 +23,8 @@
       </div>
     </div>
     <div class="bulletin-wrapper">
-      <span class="bulletin-title"></span><span class="bulletin-text">{{seller.bulletin}}</span><i class="icon-keyboard_arrow_right"></i>
+      <span class="bulletin-title"></span><span class="bulletin-text">{{seller.bulletin}}</span><i
+      class="icon-keyboard_arrow_right"></i>
     </div>
     <div class="background">
       <img :src="seller.avatar" alt="">
@@ -31,7 +32,7 @@
     <div class="detial" v-show="showDetail">
       <div class="content">
         <h1 class="name">{{seller.name}}</h1>
-        <div class="star"></div>
+        <star :size="24" :score="3.5"></star>
         <div class="favor"></div>
         <div class="notice">
           <p class="bulletin">{{seller.bulletin}}</p>
@@ -43,6 +44,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import star from '../star/star.vue';
   export default {
     props: {
       seller: {
@@ -56,12 +58,15 @@
       };
     },
     methods: {
-        showDe() {
-            this.showDetail = !this.showDetail;
-        }
+      showDe() {
+        this.showDetail = !this.showDetail;
+      }
     },
     created() {
 //        this.iconMap = ['descrease', 'discount', 'special', 'invoice', 'guarantee'];
+    },
+    components: {
+      star
     }
   };
 </script>
@@ -71,9 +76,9 @@
 
   .header {
     color: #fff;
-    position:relative;
-    background: rgba(7,17,27,.5);
-    overflow:hidden;
+    position: relative;
+    background: rgba(7, 17, 27, .5);
+    overflow: hidden;
     .content-wrapper {
       font-size: 0;
       padding: 24px 16px 18px 24px;
@@ -151,16 +156,16 @@
           bottom: 12px;
           background: rgba(255, 255, 255, .2);
           border-radius: 12px;
-          padding:0 8px;
+          padding: 0 8px;
           .count {
-            margin-right:2px;
+            margin-right: 2px;
             line-height: 24px;
             height: 24px;
             font-size: 10px;
             /*vertical-align: middle;*/
           }
-          .icon-keyboard_arrow_right{
-            line-height:24px;
+          .icon-keyboard_arrow_right {
+            line-height: 24px;
             font-size: 10px;
             /*color: white;*/
             vertical-align: -1px;
@@ -168,70 +173,70 @@
         }
       }
     }
-    .bulletin-wrapper{
-      height:28px;
-      line-height:28px;
-      padding:0 22px 0 12px;
-      background: rgba(7,17,27,.2);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      position:relative;
-      .bulletin-title{
-        margin-right:4px;
-        display:inline-block;
-        width:22px;
-        height:12px;
+    .bulletin-wrapper {
+      height: 28px;
+      line-height: 28px;
+      padding: 0 22px 0 12px;
+      background: rgba(7, 17, 27, .2);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      .bulletin-title {
+        margin-right: 4px;
+        display: inline-block;
+        width: 22px;
+        height: 12px;
         background-size: 22px 12px;
         background-repeat: no-repeat;
         @include bg-img("bulletin");
       }
-      .bulletin-text{
-        font-size:10px;
-        vertical-align:top;
+      .bulletin-text {
+        font-size: 10px;
+        vertical-align: top;
       }
-      .icon-keyboard_arrow_right{
+      .icon-keyboard_arrow_right {
         position: absolute;
-        right:12px;
-        line-height:28px;
+        right: 12px;
+        line-height: 28px;
         font-size: 10px;
       }
 
     }
-    .background{
-      img{
-        position:absolute;
-        top:0;
-        left:0;
-        z-index:-1;
-        width:100%;
-        height:100%;
-        filter:blur(10px);
+    .background {
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        filter: blur(10px);
       }
     }
-    .detial{
-      overflow:auto;
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100vh;
-      background: rgba(7,17,27,.8);
-      z-index:1;
+    .detial {
+      overflow: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(7, 17, 27, .8);
+      z-index: 1;
       /*filter:blur(10px);*/
-      display:flex;
-      flex-direction:column;
+      display: flex;
+      flex-direction: column;
       /*overflow:auto;*/
-      .content{
-        flex-grow:1;
+      .content {
+        flex-grow: 1;
       }
-      .footer{
-        text-align:center;
-        padding-top:32px;
-        padding-bottom:32px;
-        .icon-close{
-          color:rgba(255,255,255,.5);
-          font-size:32px;
+      .footer {
+        text-align: center;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        .icon-close {
+          color: rgba(255, 255, 255, .5);
+          font-size: 32px;
         }
       }
     }
