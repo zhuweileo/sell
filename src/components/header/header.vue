@@ -30,15 +30,23 @@
       <img :src="seller.avatar" alt="">
     </div>
     <div class="detial" v-show="showDetail">
-      <div class="content">
+      <div class="detial-content">
         <h1 class="name">{{seller.name}}</h1>
-        <star :size="24" :score="3.5"></star>
-        <div class="favor"></div>
+        <div class="star-wrapper">
+          <star :size="48" :score="seller.score"></star>
+        </div>
+        <div class="favor">
+          <div class="title">
+            <div class="line"></div>
+            <div class="text">优惠信息</div>
+            <div class="line"></div>
+          </div>
+        </div>
         <div class="notice">
           <p class="bulletin">{{seller.bulletin}}</p>
         </div>
       </div>
-      <div class="footer"><span class="icon-close"></span></div>
+      <div class="detial-footer"><span class="icon-close"></span></div>
     </div>
   </div>
 </template>
@@ -227,10 +235,42 @@
       display: flex;
       flex-direction: column;
       /*overflow:auto;*/
-      .content {
+      .detial-content {
         flex-grow: 1;
+        padding-top: 64px;
+        padding-left:36px;
+        padding-right:36px;
+        .name {
+          text-align: center;
+          font-size: 16px;
+          line-height: 16px;
+          font-weight: 700;
+          color: #fff;
+        }
+        .star-wrapper{
+          text-align:center;
+          padding-top:16px;
+          padding-bottom:28px;
+        }
+        .favor{
+          .title{
+            display:flex;
+            .line{
+              border-top:1px solid rgba(255,255,255,.2);
+              flex-grow:1;
+              position:relative;
+              top:7px;
+            }
+            .text{
+              font-size:14px;
+              line-height:14px;
+              font-weight:700;
+              padding:0 12px;
+            }
+          }
+        }
       }
-      .footer {
+      .detial-footer {
         text-align: center;
         padding-top: 32px;
         padding-bottom: 32px;

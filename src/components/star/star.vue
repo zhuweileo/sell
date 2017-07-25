@@ -44,16 +44,20 @@
 <style lang="scss">
   @import "../../../common/scss/mixin";
   .star{
-    /*display: inline-block;*/
+    display: inline-block;
     /*font-size:0;*/
     .star-item{
       display:inline-block;
     }
     &.star-24{
       .star-item{
-        width:20px;
-        height:19px;
-        background-size:20px 19px;
+        width:10px;
+        height:10px;
+        margin-right:3px;
+        background-size:10px 10px;
+        &:last-child{
+          margin-right:0;
+        }
       }
       .on{
         @include bg-img('./img/star24_on')
@@ -67,9 +71,13 @@
     }
     &.star-36{
       .star-item{
-        width:30px;
-        height:29px;
-        background-size: 30px 29px;
+        margin-right:6px;
+        width:15px;
+        height:15px;
+        background-size: 15px 15px;
+        &:last-child{
+          margin-right:0;
+        }
       }
       .on{
         @include bg-img('./img/star36_on')
@@ -83,9 +91,13 @@
     }
     &.star-48{
       .star-item{
-        width:40px;
-        height:38px;
-        background-size:40px 38px;
+        margin-right:22px;
+        width:20px;
+        height:19px;
+        background-size:20px 19px;
+        &:last-child{
+          margin-right:0;
+        }
       }
       .on{
         @include bg-img('./img/star48_on')
