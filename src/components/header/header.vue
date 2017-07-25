@@ -41,12 +41,22 @@
             <div class="text">优惠信息</div>
             <div class="line"></div>
           </div>
+          <div class="content">
+            <div class="item" v-for="sup in seller.supports">
+              <span class="icon" :class="iconMap[sup.type]"></span><span class="msg">{{sup.description}}</span>
+            </div>
+          </div>
         </div>
         <div class="notice">
-          <p class="bulletin">{{seller.bulletin}}</p>
+          <div class="title">
+            <div class="line"></div>
+            <div class="text">商家公告</div>
+            <div class="line"></div>
+          </div>
+          <p class="content">{{seller.bulletin}}</p>
         </div>
       </div>
-      <div class="detial-footer"><span class="icon-close"></span></div>
+      <div class="detial-footer"><span class="icon-close" @click="hideDe"></span></div>
     </div>
   </div>
 </template>
@@ -67,7 +77,10 @@
     },
     methods: {
       showDe() {
-        this.showDetail = !this.showDetail;
+        this.showDetail = true;
+      },
+      hideDe() {
+          this.showDetail = false;
       }
     },
     created() {
@@ -81,6 +94,32 @@
 
 <style lang="scss">
   @import "../../../common/scss/mixin.scss";
+  @mixin icon($w,$h,$num){
+    .icon {
+      display: inline-block;
+      margin-right: 4px;
+      vertical-align: middle;
+      width: $w;
+      height: $h;
+      background-size: $w $h;
+      background-repeat: no-repeat;
+      &.decrease {
+        @include bg-img('decrease_'+$num);
+      }
+      &.discount {
+        @include bg-img('discount_'+$num);
+      }
+      &.guarantee {
+        @include bg-img('guarantee_'+$num);
+      }
+      &.invoice {
+        @include bg-img('invoice_'+$num);
+      }
+      &.special {
+        @include bg-img('special_'+$num);
+      }
+    }
+  }
 
   .header {
     color: #fff;
@@ -128,30 +167,7 @@
         .supports {
           font-size: 10px;
           margin-top: 10px;
-          .icon {
-            display: inline-block;
-            margin-right: 4px;
-            vertical-align: middle;
-            width: 12px;
-            height: 12px;
-            background-size: 12px 12px;
-            background-repeat: no-repeat;
-            &.decrease {
-              @include bg-img('decrease_1');
-            }
-            &.discount {
-              @include bg-img('discount_1');
-            }
-            &.guarantee {
-              @include bg-img('guarantee_1');
-            }
-            &.invoice {
-              @include bg-img('invoice_1');
-            }
-            &.special {
-              @include bg-img('special_1');
-            }
-          }
+          @include icon(12px,12px,1);
           .description {
             line-height: 12px;
             vertical-align: baseline;
@@ -252,9 +268,11 @@
           padding-top:16px;
           padding-bottom:28px;
         }
-        .favor{
+        .favor,.notice{
+          margin-bottom:28px;
           .title{
             display:flex;
+            padding-bottom:24px;
             .line{
               border-top:1px solid rgba(255,255,255,.2);
               flex-grow:1;
@@ -266,6 +284,22 @@
               line-height:14px;
               font-weight:700;
               padding:0 12px;
+            }
+          }
+          .content{
+            @include icon(16px,16px,2);
+            margin-left:12px;
+            margin-right:12px;
+            font-size:12px;
+            font-weight:200;
+            line-height:24px;
+            color:#fff;
+            .icon{
+              margin-right:6px;
+              vertical-align: middle;
+            }
+            .msg{
+              vertical-align: middle;
             }
           }
         }
