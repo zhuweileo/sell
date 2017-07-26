@@ -29,7 +29,7 @@
     <div class="background">
       <img :src="seller.avatar" alt="">
     </div>
-    <div class="detial" v-show="showDetail">
+    <div class="detial" v-show="showDetail" transition="fade">
       <div class="detial-content">
         <h1 class="name">{{seller.name}}</h1>
         <div class="star-wrapper">
@@ -247,10 +247,18 @@
       height: 100vh;
       background: rgba(7, 17, 27, .8);
       z-index: 1;
-      /*filter:blur(10px);*/
+      backdrop-filter:blur(10px);
       display: flex;
       flex-direction: column;
-      /*overflow:auto;*/
+
+      &.fade-transition{
+        transition:all .3s ease;
+        opacity:1;
+
+      }
+      &.fade-enter,&.fade-leave{
+        opacity:0;
+      }
       .detial-content {
         flex-grow: 1;
         padding-top: 64px;
