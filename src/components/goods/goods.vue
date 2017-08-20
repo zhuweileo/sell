@@ -1,6 +1,12 @@
 <template>
     <div class="goods">
-        <div class="menu-wrapper"></div>
+        <div class="menu-wrapper">
+            <ul>
+                <li v-for="item in goods">
+
+                </li>
+            </ul>
+        </div>
         <div class="foods-wrapper"></div>
     </div>
 </template>
@@ -8,22 +14,21 @@
 const OK = 0;
 export default {
     props: {
-        seller:Object
+        seller: Object
     },
-    data(){
+    data() {
         return {
-            goods:[]
-        }
+            goods: []
+        };
     },
-    created(){
+    created() {
         this.$http.get('/api/goods').then((response) => {
             response = response.body;
-            if(response.errno === OK){
+            if (response.errno === OK) {
                 this.goods = response.data;
-            }
-        })
+            };
+        });
     }
-
 };
 </script>
 
